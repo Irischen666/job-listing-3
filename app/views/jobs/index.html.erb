@@ -1,22 +1,23 @@
+<br>
 <div class="col-md-8 col-centered">
   <div class="panel panel-default panel-primary">
     <div class="panel-heading ">
-      <h3>职位列表
+      <h3>Job List
         <div class="dropdown clearfix pull-right">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              排序
+              Order
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
                 <li>
-                  <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+                  <%= link_to("By lower bound", jobs_path(:order => "by_lower_bound")) %>
                 </li>
                 <li>
-                    <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+                    <%= link_to("By upper bound", jobs_path(:order => "by_upper_bound")) %>
 
                 </li>
                 <li>
-                  <%= link_to("按照发表时间排序", jobs_path ) %>
+                  <%= link_to("By published time", jobs_path ) %>
 
                 </li>
             </ul>
@@ -29,10 +30,10 @@
       <table class="table table-boldered">
         <thead>
           <tr>
-            <td>职缺</td>
-            <td>薪资下限</td>
-            <td>薪资上限</td>
-            <td>刊登时间</td>
+            <td>Position</td>
+            <td>Wage lower bound</td>
+            <td>Wage upper bound</td>
+            <td>Published time</td>
           </tr>
         </thead>
         <tbody>

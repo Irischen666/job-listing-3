@@ -1,7 +1,23 @@
-<h1><%= @job.title %></h1>
-<p>
-  <%= simple_format(@job.description) %>
-  <div class="text-center">
-    <%= link_to("投交简历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;") %>
+<br>
+<div class="col-md-8 col-centered">
+  <div class="panel panel-default panel-primary">
+    <div class="panel-heading text-center">
+        <h1><%= @job.title %></h1>
+    </div>
+    <br>
+    <div class="text-center">
+        <p>
+          <%= simple_format(@job.description) %>
+
+          <br>
+          <div class="text-center">
+            <%= link_to("投交简历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;") %>
+          </div>
+        </p>
+    </div>
+
+      <br>
+      <br>
+
   </div>
-</p>
+</div>

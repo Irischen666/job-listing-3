@@ -1,0 +1,69 @@
+<!-- <div class="col-md-12 col-centered">
+<div class="content panel panel-default panel-primary">
+  <div class="panel-heading ">
+  <h3>Find jobs</h3>
+  </div>
+  <br>
+  <% if @jobs.blank? %>
+    <div class="text-center">
+      No record were found.<br>
+      <%= link_to("Check out more jobs", jobs_path, class: "btn btn-sm btn-success") %>
+    </div>
+  <% else %>
+    <div class="table">
+      <tbody>
+        <% @jobs.each do |job| %>
+        <div><%= job.title %></div>
+        <% end %>
+      </tbody>
+    </div>
+    <div class="text-center">
+      <%= will_paginate(@jobs, renderer: BootstrapPagination::Rails) %>
+    </div>
+  <% end %>
+</div>
+
+</div> -->
+
+<!-- search result -->
+<div class="col-md-12 col-centered">
+  <br>
+<div class="content panel panel-default panel-primary">
+  <div class="panel-heading ">
+    <h4>Search results</h4>
+  </div>
+      <% if @query_string.blank? %>
+          <div class="search-info-title">
+            <br>
+            Sorry, The search content cannot be blank, please input some info to the search bar.
+            <br>
+            <br>
+          </div>
+
+        <% elsif @jobs.blank? %>
+          <br>
+          <h2 class="search-info-title">Sorry, The search content cannot be blank, please input keywords.</h2>
+        <% else %>
+          <!-- <h2 class="search-info-title"> 有关"<%= @query_string %>"的工作信息 </h2> -->
+          <div class="search-result">
+            <div class="row jobs-show0"></div>
+            <div class="job-table">
+              <% @jobs.each do |job| %>
+              <div class="row jobs-show">
+
+                <div class="col-md-12 col-lg-9 col-lg-offset-1">
+                  <!-- <div class="pull-right">
+                        Post time:<%= job.created_at.to_date %>
+                  </div> -->
+                  <p ><%= link_to(render_highlight_content(job,@query_string),job_path(job)) %></p>
+
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="text-center">
+            <%= will_paginate(@jobs, renderer: BootstrapPagination::Rails) %>
+          </div>
+        <% end %>
+</div>
